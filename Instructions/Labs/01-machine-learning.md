@@ -7,7 +7,7 @@ lab:
 
 In this exercise, you'll use the automated machine learning feature in Azure Machine Learning to train and evaluate a machine learning model. You'll then deploy and test the trained model.
 
-This exercise should take approximately **30** minutes to complete.
+This exercise should take approximately **35** minutes to complete.
 
 ## Create an Azure Machine Learning workspace
 
@@ -21,7 +21,7 @@ To use Azure Machine Learning, you need to provision an Azure Machine Learning w
     - **Subscription**: *Your Azure subscription*.
     - **Resource group**: *Create or select a resource group*.
     - **Name**: *Enter a unique name for your workspace*.
-    - **Region**: *Select the closest geographical region*.
+    - **Region**: East US.
     - **Storage account**: *Note the default new storage account that will be created for your workspace*.
     - **Key vault**: *Note the default new key vault that will be created for your workspace*.
     - **Application insights**: *Note the default new application insights resource that will be created for your workspace*.
@@ -29,7 +29,9 @@ To use Azure Machine Learning, you need to provision an Azure Machine Learning w
 
 1. Select **Review + create**, then select **Create**. Wait for your workspace to be created (it can take a few minutes), and then go to the deployed resource.
 
-1. Select **Launch studio** (or open a new browser tab and navigate to [https://ml.azure.com](https://ml.azure.com?azure-portal=true), and sign into Azure Machine Learning studio using your Microsoft account). Close any messages that are displayed.
+#### Launch studio 
+
+1. In your Azure Machine Learning workspace resource, select **Launch studio** (or open a new browser tab and navigate to [https://ml.azure.com](https://ml.azure.com?azure-portal=true), and sign into Azure Machine Learning studio using your Microsoft account). Close any messages that are displayed.
 
 1. In Azure Machine Learning studio, you should see your newly created workspace. If not, select **All workspaces** in the left-hand menu and then select the workspace you just created.
 
@@ -112,9 +114,6 @@ When the automated machine learning job has completed, you can review the best m
 
 1. On the **Overview** tab of the automated machine learning job, note the best model summary.
     ![Screenshot of the best model summary of the automated machine learning job with a box around the algorithm name.](./media/use-automated-machine-learning/complete-run.png)
-
-    > **Note**
-    > You may see a message under the status "Warning: User specified exit score reached...". This is an expected message. Please continue to the next step.
   
 1. Select the text under **Algorithm name** for the best model to view its details.
 
@@ -132,6 +131,9 @@ When the automated machine learning job has completed, you can review the best m
     - **Deployment name**: *Leave default*
     - **Inferencing data collection**: *Disabled*
     - **Package Model**: *Disabled*
+
+    > **Note**
+    > If you receive a message that there is not enough quota to select the virtual machine *Standard_DS3_v2*, please select a different one.
 
 1. Wait for the deployment to start - this may take a few seconds. The **Deploy status** for the **predict-rentals** endpoint will be indicated in the main part of the page as *Running*.
 1. Wait for the **Deploy status** to change to *Succeeded*. This may take 5-10 minutes.
