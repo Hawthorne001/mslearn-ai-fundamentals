@@ -6,11 +6,13 @@ This repository contains instructions and assets for hands-on exercises in the M
 
 The exercises in the repo are designed to support <u>both</u> self-paced learners on Microsoft Learn, and students in official instructor-led training deliveries. In most cases, self-paced learners must provide their own cloud subscription, while students attending official instructor-led courses are typically provided with subscriptions they can use to complete each individual exercise that is included in the course. Note that Microsoft does not support instructor-led deliveries of the exercises in this repo in environments other than those provided by Microsoft authorized lab hosters (ALHs).
 
-The exercises are designed to stand alone, independently of one another. Most labs begin with instructions to create an Azure AI Services resource (either a multi-service resource or a specific Azure AI service resource).
+The exercises are designed to stand alone, independently of one another. This results in some duplicated steps to create a new Microsoft Foundry project in each exercise.
 
 The numbering of the exercises in this repo indicates a suggested logical sequence that reflects the flow of modules in the official learning paths and the instructor-led materials. The numbers do <u>not</u> indicate the corresponding slide deck or "lab" in an instructor-led course.
 
 Trainers can use *any* of the exercises as instructor-led demonstrations at their discretion. Note however that hosted lab profiles and cloud subscriptions may not be provided for exercises that are not included as student labs in courses; and the exercise-specific hosted subscriptions that *are* provided in lab profiles may have policies applied that prevent completion of other exercises. Trainers are advised to test available lab profiles and to use their own cloud subscriptions for demonstrations if necessary.
+
+When an Azure subscription is not available, the exercises in the [mslearn-ai-concepts](https://github.com/MicrosoftLearning/mslearn-ai-concepts) repo may be of some use as a fallback activity. Though these exercises focus on conceptual learning objectoves rather than Foundry technologies, many of them use browser-based apps that reflect a similar look and feel to Foundry user interfaces.
 
 ## Contributing to this repo
 
