@@ -8,11 +8,11 @@ lab:
 
 # Get started with text analysis in Microsoft Foundry
 
-In this exercise, you'll use **Microsoft Foundry**, Microsoft's platform for creating AI applications, to explore common *text analysis techniques*. 
+In this exercise, you'll use **Microsoft Foundry**, Microsoft's platform for creating AI applications, to explore common *text analysis techniques*.
 
 Foundry offers *two approaches* to text analysis: **general-purpose AI models** that handle a broad range of tasks through natural language prompts, and **purpose-built language tools** that return structured, deterministic results for specific tasks. By exploring both, you'll gain a clearer understanding of when to use each approach.
 
-In the first part of this exercise, you'll use a general purpose AI model in the *new* Foundry portal's chat playground. In the second part of this exercise, you'll explore some features of Azure Language in Foundry tools. 
+In the first part of this exercise, you'll use a general purpose AI model in the *new* Foundry portal's chat playground. In the second part of this exercise, you'll explore some features of Azure Language in Foundry tools.
 
 This exercise takes approximately **20** minutes.
 
@@ -24,15 +24,15 @@ This exercise takes approximately **20** minutes.
     - **Foundry resource**: *Enter a valid name for your AI Foundry resource.*
     - **Subscription**: *Your Azure subscription*
     - **Resource group**: *Create or select a resource group*
-    - **Region**: Select any of the **AI Foundry recommended** regions
+    - **Region**: Select any of the **AI Foundry recommended** regions in **[this list](https://learn.microsoft.com/azure/foundry/openai/how-to/responses#region-availability)**{:target="_blank"}
 
 3. Select **Create**. Wait for your project to be created. It may take a few minutes. After creating or selecting a project in the new Foundry portal, it should open in a page similar to the following image:
 
     ![Screenshot of the Foundry project home page.](./media/foundry-portal-home.png)
 
-    >**Note**: Close any quick start panes in order to access your project's Foundry home page. 
+    >**Note**: Close any quick start panes in order to access your project's Foundry home page.
 
-## Part 1: Explore a general-purpose AI model's text analysis capabilities 
+## Part 1: Explore a general-purpose AI model's text analysis capabilities
 
 In this part of the exercise, you'll use the *new* Foundry portal and a general-purpose language model to perform text analysis through natural language prompts. A language model can handle a wide variety of tasks through prompting alone.
 
@@ -44,7 +44,7 @@ In this part of the exercise, you'll use the *new* Foundry portal and a general-
 
     ![Screenshot of the gpt-4.1 model page with the default settings deployment option highlighted.](./media/0-gpt-4.1.png)
 
-3. Use the **Deploy** button to deploy the model using the *default settings*. Wait for the deployment to complete. After the deployment is complete, you are taken to a chat playground, where you can test out the model's capabilities. 
+3. Use the **Deploy** button to deploy the model using the *default settings*. Wait for the deployment to complete. After the deployment is complete, you are taken to a chat playground, where you can test out the model's capabilities.
 
 ### Analyze sentiment
 
@@ -73,7 +73,7 @@ In this part of the exercise, you'll use the *new* Foundry portal and a general-
     ---
     ```
 
-    You can experiment further by creating your own prompts. 
+    You can experiment further by creating your own prompts.
 
 ### Extract named entities
 
@@ -128,9 +128,9 @@ While a language model that's trained for general generative AI workloads can of
 
 The **Azure Language in Foundry Tools** provides purpose-built analyzers that use statistical techniques to return structured, deterministic results — ideal for consistent output in automated pipelines.
 
-1. In the *new* Foundry portal, navigate to the menu at the top of the screen and select **Build**. 
+1. In the *new* Foundry portal, navigate to the menu at the top of the screen and select **Build**.
 
-2. On the *Build* page, navigate to the menu on the left-side of the screen (you may need to expand it by clicking on the expand icon at the bottom of the menu). From the left-side menu, select **Models**. Then, at the top of the *Models* page, select **AI Services**. 
+2. On the *Build* page, navigate to the menu on the left-side of the screen (you may need to expand it by clicking on the expand icon at the bottom of the menu). From the left-side menu, select **Models**. Then, at the top of the *Models* page, select **AI Services**.
 
     ![Screenshot of the Language features listed on the new Foundry models page.](./media/foundry-ai-services.png)
 
@@ -154,7 +154,7 @@ In scenarios where text could potentially be in one of multiple languages, the f
     ¡Hola! Me llamo Josefina y vivo en Madrid, España. Soy doctora en un hospital, ¡lo que me mantiene muy ocupada!
     ```
 
-4. Experiment with input of your own. 
+4. Experiment with input of your own.
 
     > **Tip**: You can use the [Bing Translator](https://www.bing.com/translator){:target="_blank"} at `https://www.bing.com/translator` to generate text in languages you don't speak!
 
@@ -180,7 +180,7 @@ To comply with privacy policies and laws, organizations often need to detect and
     Maria Garcia called from 020 7946 0958 and asked to send documents to 42 Market Road, London, UK, SW1A 1AA.
     ```
 
-4. Experiment with input of your own. Azure Language can recognize an extensive list of PII. You can see the full list [here](https://learn.microsoft.com/azure/ai-services/language-service/personally-identifiable-information/concepts/entity-categories-list). A few of those entities include: 
+4. Experiment with input of your own. Azure Language can recognize an extensive list of PII. You can see the full list [here](https://learn.microsoft.com/azure/ai-services/language-service/personally-identifiable-information/concepts/entity-categories-list). A few of those entities include:
 
     - People names
     - Email addresses
@@ -189,9 +189,9 @@ To comply with privacy policies and laws, organizations often need to detect and
 
 ### Review the sample code
 
-Foundry provides sample code for some Azure Language capabilities. You can use the sample code to begin creating your own client application. 
+Foundry provides sample code for some Azure Language capabilities. You can use the sample code to begin creating your own client application.
 
-1. Select the **Code** tab on the right to view sample code for PII identification. 
+1. Select the **Code** tab on the right to view sample code for PII identification.
 
     ![Screenshot of the Code tab open in the Playground.](./media/text-05-code.png)
 
@@ -226,10 +226,10 @@ Foundry provides sample code for some Azure Language capabilities. You can use t
             print("Redacted Text: {}".format(doc.redacted_text))
             for entity in doc.entities:
                 print("Entity: {}".format(entity.text))
-                print("	Category: {}".format(entity.category))
-                print("	Confidence Score: {}".format(entity.confidence_score))
-                print("	Offset: {}".format(entity.offset))
-                print("	Length: {}".format(entity.length))
+                print(" Category: {}".format(entity.category))
+                print(" Confidence Score: {}".format(entity.confidence_score))
+                print(" Offset: {}".format(entity.offset))
+                print(" Length: {}".format(entity.length))
     pii_recognition_example(client)
 
 
@@ -244,6 +244,6 @@ If you have finished exploring Microsoft Foundry, delete any resources that you 
 
 ## Learn more
 
-- Review the [evolution of Foundry](https://learn.microsoft.com/azure/foundry/what-is-foundry#evolution-of-foundry) 
+- Review the [evolution of Foundry](https://learn.microsoft.com/azure/foundry/what-is-foundry#evolution-of-foundry)
 - Read more about [Azure Language in Foundry Tools](https://learn.microsoft.com/azure/ai-services/language-service/overview)
 - Learn more about [Personally identifiable information (PII) detection](https://learn.microsoft.com/azure/ai-services/language-service/personally-identifiable-information/overview)

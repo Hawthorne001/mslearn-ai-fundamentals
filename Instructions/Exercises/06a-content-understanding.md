@@ -33,7 +33,7 @@ This exercise takes approximately **25** minutes.
 
 1. On the Azure AI Services page, select **Try Content Understanding**.
 
-    ![Screenshot of the Try COntent Understanding button.](./media/try-content-understanding.png)
+    ![Screenshot of the Try Content Understanding button.](./media/try-content-understanding.png)
 
 1. In the Content Understanding page, select **Create a project to start**. Then in the **Create project** dialog, select the recommended resource type (**Foundry resource**):
 
