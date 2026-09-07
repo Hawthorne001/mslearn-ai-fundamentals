@@ -121,18 +121,6 @@ The Microsoft Foundry portal is where you create and manage agents and AI servic
 
     This page provides access to Microsoft Foundry documentation.
 
-## Get AI assistance
-
-As you would expect in a platform for developing cutting edge AI solutions, Microsoft Foundry provides AI-based assistance.
-
-1. In the toolbar, use the Agent Helper chat icon to open the **Ask AI** pane.
-
-    ![Screenshot of Ask AI pane in the Foundry portal.](./media/ask_ai.png)
-
-1. Enter a prompt such as `What can I do with Microsoft Foundry?` and review the response.
-
-    If you have any questions about some of the things you've explored so far in this exercise, this is the place to ask them!
-
 ## Deploy a model
 
 Your Microsoft Foundry resource provides an endpoint in which you can deploy models and use them from applications and agents.
