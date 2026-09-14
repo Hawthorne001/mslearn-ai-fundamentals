@@ -119,7 +119,7 @@ The **Azure Language in Foundry Tools** provides purpose-built analyzers that us
 
 In scenarios where text could potentially be in one of multiple languages, the first step in an analysis workflow is often to determine the primary language so the text can be routed to the most appropriate model or agent for the subsequent processing.
 
-1. In the list of AI services, select the **Azure Language - Language detection** analyzer.
+1. In the list of Services, select the **Azure Language - Language detection** analyzer.
 1. In the **Input text** list, select one of the provided sample documents. Then use the **Detect** button to detect the language in which the sample is written.
 
     ![Screenshot of a detected language in the Playground](./media/language_detection.png)

@@ -205,7 +205,7 @@ Now you have a working agent, you can preview it in a basic web chat application
 
 The agent is defined within your Foundry project, and there's a convenient way to develop apps that connect to it there; allowing you to iteratively refine both the agent and the client app to create the solution you need.
 
-1. In the agent playground, switch from the **Chat** tab to the **Call agent** tab, and view the sample code for consuming the agent; which should be similar to this:
+1. In the agent playground, at the top of the chat pane, select **</> Continue in code**, and view the sample code for consuming the agent; which should be similar to this:
 
     ```python
     # Before running the sample:
