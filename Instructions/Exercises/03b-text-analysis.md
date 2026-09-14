@@ -11,6 +11,21 @@ lab:
 
 # Get started with text analysis in Microsoft Foundry
 
+![Image of Anton.](./media/anton-icon.png)<br/>**Hi, I'm Anton.**<br/>I'll be here to help you with hints and tips as you work through this lab, in which you'll use AI to analyze text.
+
+If you want more interactive help, you can chat with me in the *[Ask Anton](https://aka.ms/choose-anton){:target="_blank"}* app.
+
+<details>
+<strong><i><a href="https://aka.ms/choose-anton" target="_blank">Ask Anton</a></i></strong> is a generative AI agent that can answer questions about AI concepts and Microsoft Foundry technologies. It's available in two versions at <code>https://aka.ms/choose-anton</code>:
+<ul>
+<li><strong>Azure-based</strong>: Best experience <i>(requires an Azure subscription and deployment of a model in a Foundry project)</i>.</li>
+<li><strong>Browser-based</strong>: Use a small language model in your browser <i>(reduced functionality - may be slow or work only in "basic" mode in older/lower-spec devices)</i>.</li>
+</ul>
+<blockquote><i>Ask Anton is <u>not</u> a supported Microsoft product or a component of Microsoft Learn or AI Skills Navigator.</i>
+</blockquote>
+</details>
+<hr/>
+
 In this exercise, you'll use **Microsoft Foundry**, Microsoft's platform for creating AI applications, to explore common *text analysis techniques*.
 
 Foundry offers *two approaches* to text analysis: **general-purpose AI models** that handle a broad range of tasks through natural language prompts, and **purpose-built language tools** that return structured, deterministic results for specific tasks. By exploring both, you'll gain a clearer understanding of when to use each approach.
@@ -22,38 +37,40 @@ This exercise takes approximately **20** minutes.
 ## Create a project in Microsoft Foundry
 
 1. In a web browser, open [Microsoft Foundry](https://ai.azure.com){:target="_blank"} at `https://ai.azure.com` to start building; signing in using your Azure credentials.
-
-2. If it isn't already enabled, in the tool bar the top of the page, enable the **New Foundry** option. Then, if prompted, create a new project with a unique name; expanding the **Advanced options** area to specify the following settings for your project:
+1. If it isn't already enabled, in the tool bar the top of the page, enable the **New Foundry** option.
+1. If you do not have any existing projects, you will be prompted to create one. Create a new project with a unique name; expanding the  **Advanced options** area to specify the following settings for your project (or you can select an existing project if you have one!):
     - **Foundry resource**: *Enter a valid name for your AI Foundry resource.*
     - **Subscription**: *Your Azure subscription*
     - **Resource group**: *Create or select a resource group*
-    - **Region**: Select any of the **AI Foundry recommended** regions in **[this list](https://learn.microsoft.com/azure/foundry/openai/how-to/responses#region-availability)**{:target="_blank"}
+    - **Region**: Select any of the **AI Foundry recommended** regions in [this list](https://learn.microsoft.com/azure/foundry/openai/how-to/responses#supported-regions){:target="_blank"}
 
-    > **Note**: Depending on your permissions in the Azure subscription, you may need to clear the option to set up recommended resources.
+    > ![Image of Anton.](./media/anton-icon.png)<br/>**Tip**: Depending on your permissions in the Azure subscription, you may need to clear the option to set up recommended resources.
 
-3. Select **Create**. Wait for your project to be created. It may take a few minutes. After creating or selecting a project in the new Foundry portal, it should open in a page similar to the following image:
+1. Select **Create**. Wait for your project to be created. It may take a few minutes. After creating or selecting a project in the new Foundry portal, it should open in a page similar to the following image (you may need to close any *quick start* pages that are displayed):
 
     ![Screenshot of the Foundry project home page.](./media/foundry-portal-home.png)
 
-    >**Note**: Close any quick start panes in order to access your project's Foundry home page.
-
 ## Explore a general-purpose AI model's text analysis capabilities
 
-In this part of the exercise, you'll use a general-purpose language model to perform text analysis through natural language prompts. A language model can handle a wide variety of tasks through prompting alone.
+Let's start by using a chat interface to submit prompts to a generative AI model to perform a common text analysis task - summarizing text.
 
 1. Now you're ready to explore models. On the **Discover** page, select the **Models** tab to view the Microsoft Foundry model catalog.
 
     ![Screenshot of the AI Foundry model catalog.](./media/models_page.png)
 
-2. Search for and select the `gpt-5-mini` model, and view the page for this model, which describes its features and capabilities.
+1. Search for and select the `gpt-5-mini` model, and view the page for this model, which describes its features and capabilities.
 
     ![Screenshot of the gpt-5-mini model page with the default settings deployment option highlighted.](./media/gpt-5-mini_page.png)
 
-3. Use the **Deploy** button to deploy the model using the *default settings*. Wait for the deployment to complete. After the deployment is complete, you're taken to a chat playground, where you can test out the model's capabilities.
+1. Use the **Deploy** button to deploy the model using the *default settings*. Wait for the deployment to complete. After the deployment is complete, you're taken to a chat playground, where you can test out the model's capabilities.
 
-### Analyze sentiment
+    > ![Image of Anton.](./media/anton-icon.png)<br/>**Tip**: If you already have a *gpt* model deployment, you can use it instead of deploying a new one. Model deployments are subject to regional quotas. If you don't have enough quota to deploy a *gpt-5-mini* model in your project's region, you can use a different *gpt* chat-capable model - such as *gpt-5-nano*, or *gpt-5.4-mini*. Alternatively, you can create a new project in a different region.
 
-**Sentiment analysis** is a common *natural language processing* (NLP) task. It's used to determine whether text conveys a positive, neutral or negative sentiment; which makes it useful for categorizing reviews, social media posts, and other subjective documents.
+### Summarize text
+
+A common requirement in text processing is to *summarize* a large body of text to distill it to its most salient points.
+
+For example, suppose you've found an old article from a computer trade magazine, that includes a review of a home computer that was launched in the 1980s. Rather than reading the whole artice, you might want to generate a summary that highlights the key positives and negatives the reviewer found; and the overall conclusion.
 
 1. In the chat playground page, use the button at the bottom of the left navigation pane to hide it and give yourself more room to work with.
 1. In the pane on the left, change the default **Instructions** to:
@@ -62,19 +79,21 @@ In this part of the exercise, you'll use a general-purpose language model to per
    You are an AI assistant that analyzes and summarizes text.
     ```
 
-1. In the **Chat** pane, the following prompt (you can press CTRL+ENTER for a new line):
+1. Enter the following prompt (you can press CTRL+ENTER for a new line):
 
     ```
-   Summarize this review as a single, short paragraph:
+   Summarize this review as a single short paragraph:
 
-   This AI training course provides a clear and engaging introduction to core concepts such as machine learning, neural networks, and generative AI, making it accessible even to learners with limited prior experience. The course consistently reinforces key ideas through practical examples and hands-on exercises, which helps learners build confidence while applying AI techniques in real-world scenarios.
-    
-   Another strength is the emphasis on modern tools and workflows, including prompt design and model evaluation, which are highly relevant for current industry needs. The instructors communicate complex topics in a simple, structured way, and the course materials are well organized to support progressive learning. I particularly appreciated how the course revisits important themes like model accuracy, responsible AI, and iterative improvement across multiple modules, reinforcing their importance.
-    
-   Overall, this course offers a highly practical and well-rounded learning experience for anyone looking to develop foundational and applied skills in AI.
+   Commodore 64: A Strong Contender in the Home Computer Market
+
+   Commodore's long-awaited Commodore 64 has finally arrived on dealers' shelves, and first impressions suggest that the company may have another substantial success on its hands. Priced aggressively and boasting a full 64K of RAM, the machine offers specifications that would have seemed remarkable in a home computer only a short time ago. Its colourful graphics and impressive sound capabilities place it among the most capable entertainment-oriented systems currently available.
+
+   Particularly noteworthy is the SID sound generator, which produces effects and musical output far beyond what users have come to expect from machines in this price bracket. Software houses are already expressing strong interest in the platform, and the combination of advanced graphics and sound should make the Commodore 64 an attractive proposition for both game developers and serious hobbyists alike.
+
+   The machine is not without its shortcomings, however. The keyboard, while serviceable, lacks the solid feel of some competing systems, and Commodore's documentation will do little to reassure newcomers to computing. Furthermore, prospective purchasers may wish to consider the total cost of ownership, as disk drives and other peripherals remain relatively expensive. Nevertheless, the Commodore 64 enters the market as one of the most compelling home computers currently available and is likely to be a significant force in the months ahead.
     ```
 
-    The model should generate a summary of the text.
+    The model should generate a summary of the review.
 
     ![Screenshot of text summarization results in the chat playground.](./media/text_summary.png)
 
@@ -88,11 +107,13 @@ The **Azure Language in Foundry Tools** provides purpose-built analyzers that us
 
 1. In the Foundry portal, navigate to the menu at the top of the screen and select **Build**.
 
-1. On the *Build* page, navigate to the menu on the left-side of the screen (you may need to expand it). In the menu, select **Services**.
+1. On the *Build* page, navigate to the menu on the left-side of the screen (you may need to expand it). In the menu, select the **Services** page.
 
     Microsoft Foundry Tools includes multiple AI Services (formerly known as Microsoft Cognitive Services) that support common speech, translation, language, and content understanding workloads.
 
     ![Screenshot of Foundry AI services page.](./media/ai_services.png)
+
+1. Note the available services; which include Azure Language services for language detection and PII redaction.
 
 ### Detect language
 
@@ -108,15 +129,21 @@ In scenarios where text could potentially be in one of multiple languages, the f
     - Type your own text.
     - Upload a text file.
 
-    For example, enter the following input text and detect the language it's written in:
+   For example, suppose you encounter a vintage computer, and you're curious about its history. You find a label that contains the following text on the computer casing. Enter the text and detect the language it is written in:
 
     ```
-    ¡Hola! Me llamo Josefina y vivo en Madrid, España. Soy doctora en un hospital, ¡lo que me mantiene muy ocupada!
+   CPC 464
+   Art.-Nr.: 31020
+   Serien-Nr.: 464-87-041256
+   220–240 V ~ 50 Hz
+   40 W
+   Hergestellt in Korea
+   SCHNEIDER RUNDFUNKWERKE AG
+   Türkheim/Unterallgäu
+   Bundesrepublik Deutschland
     ```
 
-1. Experiment with input of your own.
-
-    > **Tip**: You can use the [Bing Translator](https://www.bing.com/translator){:target="_blank"} at `https://www.bing.com/translator` to generate text in languages you don't speak!
+    > ![Image of Anton.](./media/anton-icon.png)<br/>**Tip**: If you want to investigate further, Foundry Tools includes a **Text Translator** service in the AI Services page; which you could use to translate the text.
 
 ### Identify PII in text
 
@@ -132,13 +159,26 @@ To comply with privacy policies and laws, organizations often need to detect and
     - Type your own text.
     - Upload a text file.
 
-    For example, enter the following input text and detect any PII it contains:
+    For example, suppose you find the following invoice in the box of a vintage computer you have purchased:
 
     ```
-    Maria Garcia called from 020 7946 0958 and asked to send documents to 42 Market Road, London, UK, SW1A 1AA.
+   Tailspin Toys Ltd
+   Invoice
+   14 September 1984
+    
+   Customer:
+     Margaret Ellis
+     128 High Street, Reading, Berkshire RG1 2AB
+     Telephone: 021 685 4215
+    
+   Item: ZX Spectrum 48K home computer (includes power supply, RF lead, and user manual)
+   Price: £79.00
+   Payment received:  £79.00
     ```
 
-4. Experiment with input of your own. Azure Language can recognize an extensive list of PII. You can see the full list [here](https://learn.microsoft.com/azure/ai-services/language-service/personally-identifiable-information/concepts/entity-categories-list). A few of those entities include:
+    Enter this text and determine what personally identifiable information it contains.
+
+4. Experiment with input of your own. Azure Language can recognize an extensive list of PII. You can see the full list [here](https://learn.microsoft.com/azure/ai-services/language-service/personally-identifiable-information/concepts/entity-categories-list){:target="_blank"}. A few of those entities include:
 
     - People names
     - Email addresses
@@ -186,13 +226,11 @@ Foundry provides sample code for some Azure Language capabilities. You can use t
    pii_recognition_example(client)
     ```
 
->**Tip**: You can copy the code and run it in your preferred Python development environment - for example Visual Studio Code. You will need to create environment variables for your Azure Language endpoint and key; which you can find in the code sample window.
+    > ![Image of Anton.](./media/anton-icon.png)<br/>**Tip**: You can copy the code and run it in your preferred Python development environment - for example Visual Studio Code. You will need to create environment variables for your Azure Language endpoint and key; which you can find in the code sample window.
 
 ## Summary
 
 In this exercise, you explored how to use a generative AI model and the Azure Language tool in Foundry to analyze text. In many scenarios, the native language capabilities of a generative AI model provide all the natural language processing functionality you need. For more specialized scenarios, the Azure Language tool provides a dedicated service for NLP tasks.
-
-> **[Ask Anton](https://aka.ms/azk-anton){:target="_blank"}**<br/>![Anton avatar.](./media/anton-icon.png)<br/>If you have questions about some of the topics covered in this exercise, *[Ask Anton](https://aka.ms/azk-anton){:target="_blank"}* is a generative AI-based agent that you can ask about AI concepts and Microsoft Foundry. Open the app at **[https://aka.ms/azk-anton](https://aka.ms/azk-anton){:target="_blank"}** and use the **Configure** button to enter your Foundry project and model details.<br/><br/>*Ask Anton is not a supported Microsoft product or a component of Microsoft Learn or AI Skills Navigator. Just an example of an AI agent for you to explore as you learn about what's possible with AI.*<br/><br/>If you *do* check out Ask Anton, we'd love you to *[tell us about your experience](https://forms.office.com/r/fC0ndfBQeK){:target="_blank"}*!
 
 ## Clean up
 
@@ -200,3 +238,5 @@ If you have finished exploring Microsoft Foundry, delete any resources that you 
 
 1. Open the **Azure portal** at [https://portal.azure.com](https://portal.azure.com) and select the resource group that contains the resources you created.
 1. Select **Delete resource group** and then **enter the resource group name** to confirm. The resource group is then deleted.
+
+> ![Anton avatar.](./media/anton-icon.png)<br/>If you used the [*Ask Anton*](https://aka.ms/choose-anton){:target="_blank"} app during this lab, we'd love you to [tell us about your experience with it](https://forms.office.com/r/fC0ndfBQeK){:target="_blank"}!
